@@ -25,11 +25,10 @@ while (true) do
         
         -- carft compress cobb
         turtle.craft()
-        success_drop = turtle.dropUp()
-        while not success_drop do
+        --replace `turtle.dropUp()` to `turtle.dropDown()` if you dont want to build the env like a stair
+        while not  turtle.dropUp() do
             print('[!] upper chest is full, sleep 3 sec to try again')
             os.sleep(3)
-            success_drop = turtle.dropUp()
         end
         counter = counter + 1
         print('[+] success crafted: ' , counter, stack)
