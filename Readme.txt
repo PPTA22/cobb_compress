@@ -5,19 +5,24 @@ Aims: to compress the 9 cobblestone into compressed 1
 Pros: no power require
 Cons in my env: require Extra Utilities and 64 World Interaction Upgrade in Transfer node
 Requirement mod: Extra Utilties, ComputerCraft
-Tested env:
+-----------------------------
+My Minecraft Tested env:
 
 
    [T][c]
 [L][C][W]
 
-[T]= Transfer Noed (Items)
 [c]= chest
 [L]= Lava
 [C]= cobblestone
 [W]= Water
+
+[T]= Transfer Node (Items)
+* for the Transfter node, plz add at least 64 World Interactino Upgrade in it
+
+
 --------------------------------------
-setup env should be like below;
+Your setup in Minecraft world should be like below;
 [c] = chest, [t]=turtle
 
 tier n:          [c][t]          
