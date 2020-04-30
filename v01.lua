@@ -1,36 +1,40 @@
--- clear all the slot, at the begining of the looping, avoid bug
--- check slot is empty before suck and 64 cobb,
--- since if the block is not empty and keep suck,
--- it will put in next box which cause the program crush
+print('[!] plz make sure to all the slot is empty, u hv 1 sec to do so')
+os.sleep(1)
 
+print('[+] compress cobb program starting')
+counter = 0
 while (true) do
-    boo, data = turtle.inspect()
-    if data.name == "minecraft:chest"
-    then 
-        turtle.select(1)
-        -- if turtle.getItemDetail()
-        turtle.suck()
-        turtle.select(2)
-        turtle.suck()
-        turtle.select(3)
-        turtle.suck()
-
-        turtle.select(5)
-        turtle.suck()
-        turtle.select(6)
-        turtle.suck()
-        turtle.select(7)
-        turtle.suck()
-
-        turtle.select(9)
-        turtle.suck()
-        turtle.select(10)
-        turtle.suck()
-        turtle.select(11)
-        turtle.suck()
-
+    boo, blockDataFront = turtle.inspect()
+    boo, blockDataUp = turtle.inspect()
+    
+    if blockDataFront.name == "minecraft:chest" and blockDataUp.name == "minecraft:chest"
+    then
+        -- place item 
+        for i=1,11,4 do 
+            for y=i,i+2,1 do
+                turtle.select(y)
+                if turtle.getItemDetail() then
+                    error ("[x] The selected slot already has item, plz empty it")
+                    end
+                while not turtle.suck() do
+                    print('[!] front chest is empty, sleep 3 sec to try again')
+                    os.sleep(3)
+                end
+            end
+        end
+        
+        -- carft compress cobb
         turtle.craft()
-        turtle.dropUp()
+        success_drop = turtle.dropUp()
+        while not success_drop do
+            print('[!] upper chest is full, sleep 3 sec to try again')
+            os.sleep(3)
+            success_drop = turtle.dropUp()
+        end
+        counter = counter + 1
+        print('[+] success crafted: ' , counter, stack)
+        print('')
+
     else
         error ("[x] plz put a chest with compress itme in front of the turtle")
     end
