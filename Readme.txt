@@ -1,6 +1,21 @@
 This lua script is used and tested in computercrat 1.7.10
-Aims: to compress the 9 cobblestone into compressed 1
 
+
+Aims: to compress the 9 cobblestone into compressed 1
+Pros: no power require
+Cons in my env: require Extra Utilities and 64 World Interaction Upgrade in Transfer node
+Requirement mod: Extra Utilties, ComputerCraft
+Tested env:
+
+
+   [T][c]
+[L][C][W]
+
+[T]= Transfer Noed (Items)
+[c]= chest
+[L]= Lava
+[C]= cobblestone
+[W]= Water
 --------------------------------------
 setup env should be like below;
 [c] = chest, [t]=turtle
@@ -11,7 +26,7 @@ tier 2:    [c][t]
 tier 1: [c][t]
 --------------------------------
 Just like a stair, tier 1 chest should be the cobblestone.
-In other chest, the tutle will handle itself.
+In other tier's chest, the tutle will handle itself.
 Actully, it can also compress other item with 9 item
 9 item means: [ ][ ][ ]
               [ ][ ][ ]
